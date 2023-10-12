@@ -44,7 +44,7 @@
     display: flex;
 }
 
-.leftBar .menu .item-menu a {
+.leftBar .menu .item-menu button {
     width: 100%;
     color: #FFFFFF;
     display: flex;
@@ -55,13 +55,20 @@
     font-size: 14px;
     cursor: pointer;
     transition: 0.6s;
+    background: transparent;
+    border: none;
 }
 
-.leftBar .menu .item-menu a:hover{
+
+.leftBar .menu .item-menu button.pressed {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.leftBar .menu .item-menu a i{
+.leftBar .menu .item-menu button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.leftBar .menu .item-menu button i{
     font-size: 30px;
 }
 
@@ -121,12 +128,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 15px;
+}
+
+
+.mobile .main .menu .item-menu button{
+    background: transparent;
+    border: none;
+}
+
+.mobile .main .menu .item-menu button.pressed{
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .mobile .main .user i,
-.mobile .main .menu .item-menu a{
+.mobile .main .menu .item-menu button{
     color: #FFFFFF;
+}
+
+.mobile .main .menu .item-menu button{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 0 15px;
 }
 
 .mobile .main .user{
@@ -185,12 +208,12 @@
     .leftBar{
         width: 75px;
     }
-    .leftBar .menu .item-menu a{
+    .leftBar .menu .item-menu button{
         padding: 0;
         justify-content: center;
         height: 45px;
     }
-    .leftBar .menu .item-menu a span{
+    .leftBar .menu .item-menu button span{
         display: none;
     }
     .leftBar .s-out .btn{

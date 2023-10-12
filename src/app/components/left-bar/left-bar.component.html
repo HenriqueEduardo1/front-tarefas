@@ -5,16 +5,22 @@
     <nav class="menu">
         <ul>
             <li class="item-menu">
-                <a routerLink="/">
+                <button (click)="toggleButton(1)" [class.pressed]="currentButton === 1">
                     <i class="material-symbols-outlined">home</i>
                     <span>Home</span>
-                </a>
+                </button>
             </li>
             <li class="item-menu">
-                <a routerLink="/completedTask">
+                <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">
                     <i class="material-symbols-outlined">done</i>
-                    <span>Completad task</span>
-                </a>
+                    <span>Completad tasks</span>
+                </button>
+            </li>
+            <li class="item-menu">
+                <button (click)="toggleButton(3)" [class.pressed]="currentButton === 3">
+                    <i class="material-symbols-outlined">hourglass_bottom</i>
+                    <span>Late tasks</span>
+                </button>
             </li>
         </ul>
     </nav>
@@ -41,10 +47,13 @@
         <nav class="menu">
             <ul>
                 <li class="item-menu">
-                    <a routerLink="/">Home</a>
+                    <button (click)="toggleButton(1)" [class.pressed]="currentButton === 1">Home</button>
                 </li>
                 <li class="item-menu">
-                    <a routerLink="/completedTask">Completad task</a>
+                    <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">Completad task</button>
+                </li>
+                <li class="item-menu">
+                    <button (click)="toggleButton(3)" [class.pressed]="currentButton === 3">Late tasks</button>
                 </li>
             </ul>
         </nav>

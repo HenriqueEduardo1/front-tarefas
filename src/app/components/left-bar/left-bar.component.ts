@@ -10,6 +10,12 @@ export class LeftBarComponent {
   enableButton: boolean = true;  
   disableButton: boolean = false; 
 
+  currentButton: number = 1;
+
+  toggleButton(buttonNumber: number) {
+    this.currentButton = buttonNumber;
+  }
+
   enableMenu() {
     this.isMenuActive = true;
     this.enableButton = false;
