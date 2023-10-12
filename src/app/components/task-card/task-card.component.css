@@ -1,5 +1,5 @@
 .card{
-    width: 100%;
+    width: 280px;
     min-height: 200px;
     background-color: #FFFFFF;
     border-radius: 15px;
@@ -72,9 +72,63 @@
     font-size: 25px;
 }
 
-@media(max-width: 768px){
+@media(max-width: 1200px){
     .card{
-        width: 230px;
-        min-height: 200px;
+        width: 260px;
     }
+    .card .main h4{
+        font-size: 14px;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+    }
+        
+    .card .main p{
+        font-size: 12px;
+    }
+
+    .footer .date span,
+    .footer .responsible span{
+        font-size: 11px;
+    }
+    .footer .btns .btn{
+        width: 28px;
+        height: 28px;
+    }
+    .footer .btns .btn i{
+        font-size: 22px;
+    }
+    .footer .btns{
+        height: 30px;
+        width: 100px;
+    }
+}
+
+@media(max-width: 950px){
+    .card{
+        width: 220px;
+        border-radius: 10px;
+        padding: 7px;
+        border-left: 3px solid #ff7b74;
+    }
+    
+    .card .main h4{
+        font-size: 12px;
+        margin-bottom: 6px;
+        padding-bottom: 4px;
+    }
+    .card .main p{
+        font-size: 11px;
+    }
+    .footer .responsible{
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .footer .date span,
+    .footer .responsible span{
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 768px){
+    
 }

@@ -200,7 +200,27 @@
 }
 
 
-@media(max-width: 1000px){
+
+@media(max-width: 1200px){
+    .leftBar{
+        width: 210px;
+        padding: 25px 10px 25px 10px;
+    }
+    .leftBar .menu .item-menu button {
+        font-size: 13px;
+    }
+    .leftBar .menu .item-menu button i{
+        font-size: 25px;
+    }
+    .leftBar .s-out .btn i{
+        font-size: 20px;
+    }
+    .leftBar .s-out .btn span{
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 1080px){
     .leftBar{
         width: 75px;
     }
@@ -224,7 +244,7 @@
 }
 
 
-@media(max-width: 480px){
+@media(max-width: 768px){
     .leftBar{
         display: none;
     }
