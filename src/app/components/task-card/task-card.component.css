@@ -1,0 +1,80 @@
+.card{
+    width: 100%;
+    min-height: 200px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 5px solid #ff7b74;
+    padding: 10px;
+}
+
+.card .main h4{
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #7a7a7a;
+    padding-bottom: 8px;
+}
+
+.card .main p{
+    font-size: 14px;
+    text-align: justify;
+}
+
+.footer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.footer .responsible{
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: azure;
+    color: #7a7a7a;
+}
+
+.footer .date span,
+.footer .responsible span{
+    font-size: 13px;
+}
+
+.footer .btns{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    height: 40px;
+    width: 120px;
+}
+
+.footer .btns .btn{
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.footer .btns .btn:hover{
+    border: 1px solid #7a7a7a;
+}
+
+.footer .btns .btn i{
+    color: #7a7a7a;
+    font-size: 25px;
+}
+
+@media(max-width: 768px){
+    .card{
+        width: 230px;
+        min-height: 200px;
+    }
+}
