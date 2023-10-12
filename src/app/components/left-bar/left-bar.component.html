@@ -1,0 +1,55 @@
+<aside class="leftBar">
+    <header class="user">
+        <i class="material-symbols-outlined">person</i>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li class="item-menu">
+                <a routerLink="/">
+                    <i class="material-symbols-outlined">home</i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a routerLink="/completedTask">
+                    <i class="material-symbols-outlined">done</i>
+                    <span>Completad task</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="s-out">
+        <button class="btn">
+            <i class="material-symbols-outlined">logout</i>
+            <span>Sign out</span>
+        </button>
+    </div>
+</aside>
+<header [ngClass]="{'active': isMenuActive, 'mobile': true}">
+    <div class="btns-menu-mob">
+        <button *ngIf="enableButton" (click)="enableMenu()" class="btn">
+            <i class="material-symbols-outlined">menu</i>
+        </button>
+        <button *ngIf="disableButton" (click)="disableMenu()" class="btn">
+            <i class="material-symbols-outlined">close</i>
+        </button>
+    </div>
+    <section class="main">
+        <header class="user">
+            <i class="material-symbols-outlined">person</i>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li class="item-menu">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="item-menu">
+                    <a routerLink="/completedTask">Completad task</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="s-out">
+            <button class="btn">Sign out </button>
+        </div>
+    </section>
+</header>
