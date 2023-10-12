@@ -4,10 +4,6 @@
     display: flex;
     flex-direction: column;
     background-color: #0d1321;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #0d1321;
     width: 230px;
     height: 100%;
     padding: 30px 15px 30px 15px;
@@ -117,13 +113,13 @@
     transition: 1s;
 }
 
-.mobile .main .menu ul{
+.mobile .main .menu-mobile ul{
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.mobile .main .menu .item-menu{
+.mobile .main .menu-mobile .item-menu{
     height: 40px;
     display: flex;
     align-items: center;
@@ -131,25 +127,25 @@
 }
 
 
-.mobile .main .menu .item-menu button{
+.mobile .main .menu-mobile .item-menu button{
     background: transparent;
     border: none;
 }
 
-.mobile .main .menu .item-menu button.pressed{
+.mobile .main .menu-mobile .item-menu button.pressed{
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.mobile .main .user i,
-.mobile .main .menu .item-menu button{
+.mobile .main .user i{
     color: #FFFFFF;
 }
 
-.mobile .main .menu .item-menu button{
+.mobile .main .menu-mobile .item-menu button{
     width: 100%;
     height: 100%;
     border-radius: 20px;
     padding: 0 15px;
+    color: #FFFFFF;
 }
 
 .mobile .main .user{

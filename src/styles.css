@@ -17,4 +17,6 @@ li {
 
 body {
     background-color: #F6F7F9;
+    width: 100vw;
+    height: 100vh;
 }
