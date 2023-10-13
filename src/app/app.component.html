@@ -1,5 +1,5 @@
 <app-left-bar></app-left-bar>
-<app-form [btnText]="btnText"></app-form>
+<app-form [btnText]="btnText" (onSubmit)="createHandler($event)"></app-form>
 <main class="main">
     <app-home></app-home>
 </main>

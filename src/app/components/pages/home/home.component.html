@@ -9,17 +9,28 @@
     </header>
     <main class="content">
         <div class="box-listagem">
-            <app-task-card></app-task-card>
-            <app-task-card></app-task-card>
-            <app-task-card></app-task-card>
-            <app-task-card></app-task-card>
+            <div *ngFor="let task of tasksA">
+                <app-task-card
+                    [task] = "task" 
+                    *ngIf="task.situation === situation"
+                ></app-task-card>
+            </div>
         </div>
         <div class="box-listagem">
-            <app-task-card></app-task-card>
+            <div *ngFor="let task of tasksM">
+                <app-task-card
+                    [task] = "task" 
+                    *ngIf="task.situation === situation"
+                ></app-task-card>
+            </div>
         </div>
         <div class="box-listagem">
-            <app-task-card></app-task-card>
-            <app-task-card></app-task-card>
+            <div *ngFor="let task of tasksB">
+                <app-task-card
+                    [task] = "task" 
+                    *ngIf="task.situation === situation"
+                ></app-task-card>
+            </div>
         </div>
     </main>
 </section>

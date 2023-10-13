@@ -1,29 +1,24 @@
 <div class="card">
     <main class="main">
-        <h4 class="title">Fazer o sistema de login</h4>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, 
-            adipisicing elit. Sed facere nostrum eum 
-            laborum explicabo excepturi dignissimos 
-            consequatur reiciendis voluptas 
-        </p>
+        <h4 class="title">{{task.title}}</h4>
+        <p>{{task.description}}</p>
     </main>
     <footer class="footer">
         <div class="responsible">
-            <span>Henrique</span>
+            <span>{{task.responsible}}</span>
             <div class="date">
                 <span>Até:  </span>
-                <span>10/10/2023</span>
+                <span>{{task.deadline}}</span>
             </div>
         </div>
         <div class="btns">
-            <button class="btn">
+            <button class="btn" (click)="onBtnClicked()">
                 <i class="material-symbols-outlined">done</i>
             </button>
-            <button class="btn">
+            <button class="btn" (click)="onBtnClicked()">
                 <i class="material-symbols-outlined">edit</i>
             </button>
-            <button class="btn">
+            <button class="btn" (click)="onBtnClicked()">
                 <i class="material-symbols-outlined">delete</i>
             </button>
         </div>

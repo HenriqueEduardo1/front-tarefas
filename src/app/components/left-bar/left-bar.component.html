@@ -5,21 +5,15 @@
     <nav class="menu">
         <ul>
             <li class="item-menu">
-                <button (click)="toggleButton(1)" [class.pressed]="currentButton === 1">
+                <button (click)="toggleButton(1); onBtnClickedProgress()" [class.pressed]="currentButton === 1">
                     <i class="material-symbols-outlined">home</i>
                     <span>Home</span>
                 </button>
             </li>
             <li class="item-menu">
-                <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">
+                <button (click)="toggleButton(2); onBtnClickedCompleted()" [class.pressed]="currentButton === 2">
                     <i class="material-symbols-outlined">done</i>
                     <span>Completad tasks</span>
-                </button>
-            </li>
-            <li class="item-menu">
-                <button (click)="toggleButton(3)" [class.pressed]="currentButton === 3">
-                    <i class="material-symbols-outlined">hourglass_bottom</i>
-                    <span>Late tasks</span>
                 </button>
             </li>
         </ul>
@@ -47,13 +41,10 @@
         <nav class="menu-mobile">
             <ul>
                 <li class="item-menu">
-                    <button (click)="toggleButton(1)" [class.pressed]="currentButton === 1">Home</button>
+                    <button (click)="toggleButton(1); onBtnClickedProgress()" [class.pressed]="currentButton === 1">Home</button>
                 </li>
                 <li class="item-menu">
-                    <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">Completad task</button>
-                </li>
-                <li class="item-menu">
-                    <button (click)="toggleButton(3)" [class.pressed]="currentButton === 3">Late tasks</button>
+                    <button (click)="toggleButton(2); onBtnClickedCompleted()" [class.pressed]="currentButton === 2">Completad task</button>
                 </li>
             </ul>
         </nav>

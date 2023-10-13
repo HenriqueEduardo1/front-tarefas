@@ -1,33 +1,46 @@
 <section [class.off]="popUpService.addClass" [class.pop-up]="true">
-    <form class="form">
+    <form (ngSubmit) = "submit()" [formGroup]="taskForm" #formDir="ngForm" class="form">
         <section class="container">
             <div class="box-form">
                 <div class="group">
                     <label>Título</label>
-                    <input class="title" clatype="text" required>
+                    <input class="title" clatype="text" formControlName="title" required>
+                    <p *ngIf="title.invalid && formDir.submitted">Obrigatório</p>
                 </div>
                 <div class="group">
                     <label>Descrição</label>
-                    <textarea class="description" required></textarea>
+                    <textarea class="description" formControlName="description" required></textarea>
+                    <p *ngIf="description.invalid && formDir.submitted">Obrigatório</p>
                 </div>
             </div>
             <div class="box-form">
                 <div class="group">
                     <label>Responsável</label>
-                    <select class="responsible" required></select>
+                    <select class="responsible" formControlName="responsible" required>
+                        <option value="Henrique">Henrique</option>
+                        <option value="Pablo">Pablo</option>
+                        <option value="Douglas">Douglas</option>
+                    </select>
+                    <p *ngIf="responsible.invalid && formDir.submitted">Obrigatório</p>
                 </div>
                 <div class="group">
                     <label>Prioridade</label>
-                    <select class="priority" required></select>
+                    <select class="priority" formControlName="priority" required>
+                        <option value="alta">Alta</option>
+                        <option value="media">Média</option>
+                        <option value="baixa">Baixa</option>
+                    </select>
+                    <p *ngIf="priority.invalid && formDir.submitted">Obrigatório</p>
                 </div>
                 <div class="group">
                     <label>Data final</label>
-                    <input class="deadline" type="date" required>
+                    <input class="deadline" formControlName="deadline" type="date" required>
+                    <p *ngIf="deadline.invalid && formDir.submitted">Obrigatório</p>
                 </div>
             </div>
         </section>
         <div class="btns">
-            <input (click)="addClass()" type="submit" class="btn" value="{{btnText}}">
+            <input type="submit" class="btn" value="{{btnText}}">
             <button (click)="addClass()" class="btn">Voltar</button>
         </div>
     </form>

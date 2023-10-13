@@ -54,6 +54,11 @@
     gap: 4px;
 }
 
+.pop-up .form .container .box-form .group p{
+    font-size: 10px;
+    color: red;
+}
+
 .pop-up .form .container .box-form .group label{
     font-size: 13px;
     font-weight: 600;
