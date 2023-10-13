@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PopUpService } from 'src/app/services/pop-up.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { PopUpService } from 'src/app/services/pop-up.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
+  @Input() btnText!: string;
 
   constructor(public popUpService: PopUpService) {}
 
