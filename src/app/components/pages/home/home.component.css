@@ -7,6 +7,23 @@
 .main .header{
     width: calc(100vw - 230px);
     height: 20vh;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .header .busca{
+    width: 80%;
+}
+
+.main .header .btn button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(7, 170, 7);
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .main .content{
