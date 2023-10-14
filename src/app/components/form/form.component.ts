@@ -8,23 +8,24 @@ import {Task} from 'src/app/Task';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-  @Output() onSubmit = new EventEmitter<Task>()
+  @Output() onSubmit = new EventEmitter<Task>();
   @Input() btnText!: string;
+  @Input() taskData: Task | null = null; 
 
   taskForm!: FormGroup;
 
   constructor(
     public popUpService: PopUpService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.taskForm = new FormGroup({
-      id: new FormControl(''),
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
-      responsible: new FormControl('', [Validators.required]),
-      priority: new FormControl('', [Validators.required]),
-      deadline: new FormControl('', [Validators.required]),
+      id: new FormControl(this.taskData ? this.taskData.idTask : ''),
+      title: new FormControl(this.taskData ? this.taskData.title : '', [Validators.required]),
+      description: new FormControl(this.taskData ? this.taskData.description : '', [Validators.required]),
+      responsible: new FormControl(this.taskData ? this.taskData.responsible : '', [Validators.required]),
+      priority: new FormControl(this.taskData ? this.taskData.priority : '', [Validators.required]),
+      deadline: new FormControl(this.taskData ? this.taskData.deadline : '', [Validators.required]),
     });
   }
 
@@ -59,5 +60,6 @@ export class FormComponent {
 
     this.onSubmit.emit(this.taskForm.value);
     this.addClass();
+    this.taskForm.reset();
   }
 }

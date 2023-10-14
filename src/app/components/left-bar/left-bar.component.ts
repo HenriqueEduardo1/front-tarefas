@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonsService } from '../../services/buttons.service';
-
+import { HomeService } from 'src/app/services/home.service';
 @Component({
   selector: 'app-left-bar',
   templateUrl: './left-bar.component.html',
@@ -14,16 +13,21 @@ export class LeftBarComponent {
   currentButton: number = 1;
 
   constructor(
-    private buttonsService: ButtonsService,
+    private homeService: HomeService
   ) {}
 
   toggleButton(buttonNumber: number) {
     this.currentButton = buttonNumber;
   }
 
-  emitClickButton() {
-    this.buttonsService.emitBtnClickReload();
+  clickedBtnMenuP() {
+    this.homeService.updateSituation('em andamento');
   }
+
+  clickedBtnMenuS() {
+    this.homeService.updateSituation('concluida')
+  }
+  
 
   enableMenu() {
     this.isMenuActive = true;

@@ -33,26 +33,23 @@
     </header>
     <main class="content">
         <div class="box-listagem">
-            <div *ngFor="let task of tasksA">
+            <div *ngFor="let task of filterTasksA">
                 <app-task-card
                     [task] = "task" 
-                    *ngIf="task.situation === situation"
                 ></app-task-card>
             </div>
         </div>
         <div class="box-listagem">
-            <div *ngFor="let task of tasksM">
+            <div *ngFor="let task of filterTasksM">
                 <app-task-card
                     [task] = "task" 
-                    *ngIf="task.situation === situation"
                 ></app-task-card>
             </div>
         </div>
         <div class="box-listagem">
-            <div *ngFor="let task of tasksB">
+            <div *ngFor="let task of filterTasksB">
                 <app-task-card
                     [task] = "task" 
-                    *ngIf="task.situation === situation"
                 ></app-task-card>
             </div>
         </div>
