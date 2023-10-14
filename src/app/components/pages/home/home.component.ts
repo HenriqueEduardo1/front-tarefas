@@ -29,25 +29,39 @@ export class HomeComponent {
 
   reloadList(): void {
     this.taskService.getAllTasks().subscribe((items) => {
-      this.tasksA = items.filter(task => task.priority === 'alta');
-      this.tasksM = items.filter(task => task.priority === 'media');
-      this.tasksB = items.filter(task => task.priority === 'baixa');
+      this.tasksA = items.filter(task => (task.priority === 'alta' && task.situation === "em andamento"));
+      this.tasksM = items.filter(task => (task.priority === 'media' && task.situation === "em andamento"));
+      this.tasksB = items.filter(task => (task.priority === 'baixa' && task.situation === "em andamento"));
+      this.allTasks = items;
+    })
+  }
+
+  changeFilter(): void {
+    this.taskService.getAllTasks().subscribe((items) => {
+      this.tasksA = items.filter(task => (task.priority === 'alta' && task.situation === "concluido"));
+      this.tasksM = items.filter(task => (task.priority === 'media' && task.situation === "concluido"));
+      this.tasksB = items.filter(task => (task.priority === 'baixa' && task.situation === "concluido"));
       this.allTasks = items;
     })
   }
 
   ngOnInit(): void {
     this.taskService.getAllTasks().subscribe((items) => {
-      this.tasksA = items.filter(task => task.priority === 'alta');
-      this.tasksM = items.filter(task => task.priority === 'media');
-      this.tasksB = items.filter(task => task.priority === 'baixa');
+      this.tasksA = items.filter(task => (task.priority === 'alta' && task.situation === "em andamento"));
+      this.tasksM = items.filter(task => (task.priority === 'media' && task.situation === "em andamento"));
+      this.tasksB = items.filter(task => (task.priority === 'baixa' && task.situation === "em andamento"));
       this.allTasks = items;
     });
 
     this.buttonsService.btnClickReload.subscribe(() => {
       this.reloadList();
     });
+    
+    this.buttonsService.btnClickChangeFilter.subscribe(() => {
+      this.changeFilter();
+    });
   }
+
 
   addClass() {
     this.popUpService.toggleClass();

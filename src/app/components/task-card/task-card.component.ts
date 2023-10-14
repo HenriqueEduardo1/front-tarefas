@@ -16,11 +16,15 @@ export class TaskCardComponent {
     private taskService: TaskService
   ) {}
 
-    clickedDelete(){
-      this.buttonsService.evento.emit();
-    }
-
   async removeHandler(id: any){
-    await this.taskService.deleteTask(id).subscribe();
+    await this.taskService.deleteTask(id).subscribe(
+      () => {
+        console.log('Task deletada com sucesso');
+        this.buttonsService.emitBtnClickReload();
+      },
+      (erro) => {
+        console.error('Erro ao deletar task', erro);
+      }
+    );
   }
 }

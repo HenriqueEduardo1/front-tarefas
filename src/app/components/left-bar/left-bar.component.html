@@ -11,7 +11,7 @@
                 </button>
             </li>
             <li class="item-menu">
-                <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">
+                <button (click)="toggleButton(2); emitClickButton()" [class.pressed]="currentButton === 2">
                     <i class="material-symbols-outlined">done</i>
                     <span>Completad tasks</span>
                 </button>
@@ -44,7 +44,7 @@
                     <button (click)="toggleButton(1)" [class.pressed]="currentButton === 1">Home</button>
                 </li>
                 <li class="item-menu">
-                    <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">Completad task</button>
+                    <button (click)="toggleButton(2); emitClickButton()" [class.pressed]="currentButton === 2">Completad task</button>
                 </li>
             </ul>
         </nav>

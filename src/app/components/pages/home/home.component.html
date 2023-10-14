@@ -1,7 +1,31 @@
 <section class="main">
     <header class="header">
         <section class="busca">
-
+            <div class="group">
+                <label>Prioridade</label>
+                <input type="text">
+            </div>
+            <div>
+                <div class="sections">
+                    <div class="group">
+                        <label>Prioridade</label>
+                        <select>
+                            <option value="alta">Alta</option>
+                            <option value="media">Média</option>
+                            <option value="baixa">Baixa</option>
+                        </select>
+                    </div>
+                    <div class="group">
+                        <label>Responsável</label>
+                        <select>
+                            <option value="Henrique">Henrique</option>
+                            <option value="Pablo">Pablo</option>
+                            <option value="Douglas">Douglas</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn">Buscar</button>
+            </div>
         </section>
         <div class="btn">
             <button (click)="addClass()">New</button>

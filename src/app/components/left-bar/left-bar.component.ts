@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ButtonsService } from '../../services/buttons.service';
+
 @Component({
   selector: 'app-left-bar',
   templateUrl: './left-bar.component.html',
@@ -11,9 +13,16 @@ export class LeftBarComponent {
 
   currentButton: number = 1;
 
+  constructor(
+    private buttonsService: ButtonsService,
+  ) {}
 
   toggleButton(buttonNumber: number) {
     this.currentButton = buttonNumber;
+  }
+
+  emitClickButton() {
+    this.buttonsService.emitBtnClickReload();
   }
 
   enableMenu() {
