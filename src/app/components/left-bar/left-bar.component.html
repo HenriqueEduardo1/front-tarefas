@@ -5,13 +5,13 @@
     <nav class="menu">
         <ul>
             <li class="item-menu">
-                <button (click)="toggleButton(1); onBtnClickedProgress()" [class.pressed]="currentButton === 1">
+                <button (click)="toggleButton(1)" [class.pressed]="currentButton === 1">
                     <i class="material-symbols-outlined">home</i>
                     <span>Home</span>
                 </button>
             </li>
             <li class="item-menu">
-                <button (click)="toggleButton(2); onBtnClickedCompleted()" [class.pressed]="currentButton === 2">
+                <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">
                     <i class="material-symbols-outlined">done</i>
                     <span>Completad tasks</span>
                 </button>
@@ -41,10 +41,10 @@
         <nav class="menu-mobile">
             <ul>
                 <li class="item-menu">
-                    <button (click)="toggleButton(1); onBtnClickedProgress()" [class.pressed]="currentButton === 1">Home</button>
+                    <button (click)="toggleButton(1)" [class.pressed]="currentButton === 1">Home</button>
                 </li>
                 <li class="item-menu">
-                    <button (click)="toggleButton(2); onBtnClickedCompleted()" [class.pressed]="currentButton === 2">Completad task</button>
+                    <button (click)="toggleButton(2)" [class.pressed]="currentButton === 2">Completad task</button>
                 </li>
             </ul>
         </nav>

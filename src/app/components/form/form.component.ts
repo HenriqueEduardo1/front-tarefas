@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PopUpService } from 'src/app/services/pop-up.service';
 import {Task} from 'src/app/Task';
-import { ButtonsService } from 'src/app/services/buttons.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -15,9 +14,8 @@ export class FormComponent {
   taskForm!: FormGroup;
 
   constructor(
-    public popUpService: PopUpService,
-    private buttonsService: ButtonsService
-  ) {}
+    public popUpService: PopUpService
+    ) {}
 
   ngOnInit(): void {
     this.taskForm = new FormGroup({
@@ -60,7 +58,6 @@ export class FormComponent {
     }
 
     this.onSubmit.emit(this.taskForm.value);
-    this.buttonsService.emitBtnClickReload();
     this.addClass();
   }
 }

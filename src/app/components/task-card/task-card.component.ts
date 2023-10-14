@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ButtonsService } from '../../services/buttons.service';
+import { TaskService } from 'src/app/services/task.service';
 import { Task } from 'src/app/Task';
 
 @Component({
@@ -11,10 +12,15 @@ export class TaskCardComponent {
   @Input() task!: Task;
 
   constructor(
-    private buttonsService: ButtonsService
+    private buttonsService: ButtonsService,
+    private taskService: TaskService
   ) {}
 
-  onBtnClicked() {
-    this.buttonsService.emitBtnClickReload();
+    clickedDelete(){
+      this.buttonsService.evento.emit();
+    }
+
+  async removeHandler(id: any){
+    await this.taskService.deleteTask(id).subscribe();
   }
 }

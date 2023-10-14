@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ButtonsService } from 'src/app/services/buttons.service';
 @Component({
   selector: 'app-left-bar',
   templateUrl: './left-bar.component.html',
@@ -12,17 +11,6 @@ export class LeftBarComponent {
 
   currentButton: number = 1;
 
-  constructor(
-    private buttonsService: ButtonsService
-  ) {}
-
-  onBtnClickedProgress() {
-    this.buttonsService.emitBtnClickProgressTasks();
-  }
-
-  onBtnClickedCompleted() {
-    this.buttonsService.emitBtnClickCompletedTasks();
-  }
 
   toggleButton(buttonNumber: number) {
     this.currentButton = buttonNumber;

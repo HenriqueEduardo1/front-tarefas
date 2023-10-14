@@ -21,7 +21,11 @@ export class HomeComponent {
     private popUpService: PopUpService,
     private taskService: TaskService,
     private buttonsService: ButtonsService
-  ) {}
+  ) {
+    this.buttonsService.evento.subscribe(() => {
+      this.reloadList();
+    });
+  }
 
   reloadList(): void {
     this.taskService.getAllTasks().subscribe((items) => {
@@ -30,18 +34,6 @@ export class HomeComponent {
       this.tasksB = items.filter(task => task.priority === 'baixa');
       this.allTasks = items;
     })
-  }
-
-  reloadProgressTasks(): void {
-    this.tasksA = this.allTasks.filter(task => (task.priority === 'alta' && task.situation === 'em andamento'));
-    this.tasksM = this.allTasks.filter(task => (task.priority === 'media' && task.situation === 'em andamento'));
-    this.tasksB = this.allTasks.filter(task => (task.priority === 'baixa' && task.situation === 'em andamento'));
-  }
-
-  reloadCompletedTasks(): void {
-    this.tasksA = this.allTasks.filter(task => (task.priority === 'alta' && task.situation === 'concluida'));
-    this.tasksM = this.allTasks.filter(task => (task.priority === 'media' && task.situation === 'concluida'));
-    this.tasksB = this.allTasks.filter(task => (task.priority === 'baixa' && task.situation === 'concluida'));
   }
 
   ngOnInit(): void {
@@ -55,14 +47,6 @@ export class HomeComponent {
     this.buttonsService.btnClickReload.subscribe(() => {
       this.reloadList();
     });
-
-    this.buttonsService.btnClickProgressTasks.subscribe(() => {
-      this.reloadProgressTasks();
-    })
-
-    this.buttonsService.btnClickCompletedTasks.subscribe(() => {
-      this.reloadCompletedTasks();
-    })
   }
 
   addClass() {

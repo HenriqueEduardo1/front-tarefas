@@ -1,3 +1,4 @@
+import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -7,20 +8,12 @@ import { Subject } from 'rxjs';
 export class ButtonsService {
   private buttonClickSubject = new Subject<void>();
 
+  evento = new EventEmitter();
+
   btnClickReload = this.buttonClickSubject.asObservable();
-
-  btnClickProgressTasks = this.buttonClickSubject.asObservable();
-  btnClickCompletedTasks = this.buttonClickSubject.asObservable();
-
+  
   emitBtnClickReload() {
     this.buttonClickSubject.next();
   }
 
-  emitBtnClickProgressTasks() {
-    this.buttonClickSubject.next();
-  }
-
-  emitBtnClickCompletedTasks() {
-    this.buttonClickSubject.next();
-  }
 }

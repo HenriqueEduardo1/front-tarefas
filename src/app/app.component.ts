@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskService } from './services/task.service';
-
+import { ButtonsService } from './services/buttons.service';
 import { Task } from './Task';
 
 @Component({
@@ -16,8 +16,13 @@ export class AppComponent {
   btnText = "Cadastrar"
 
   constructor(
-    private taskService: TaskService
+    private taskService: TaskService,
+    private buttonsService: ButtonsService
   ) {}
+
+  reloadTasks() {
+    this.buttonsService.emitBtnClickReload();
+  }
 
   async createHandler(task: Task) {
     this.data = {
@@ -29,7 +34,15 @@ export class AppComponent {
       "deadline": `${task.deadline}`,
     }
     
-    await this.taskService.creatTask(this.data).subscribe();
+    await this.taskService.creatTask(this.data).subscribe(
+      (resposta) => {
+        console.log('Task salvo com sucesso', resposta);
+        this.reloadTasks();
+      },
+      (erro) => {
+        console.error('Erro ao salvar task', erro);
+      }
+    );
   }
 
 }
