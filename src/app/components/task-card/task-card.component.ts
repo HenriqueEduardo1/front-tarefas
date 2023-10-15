@@ -12,7 +12,7 @@ import { Task } from 'src/app/Task';
 export class TaskCardComponent {
   @Input() task!: Task;
 
-  data!: Task;
+  data!: any;
 
   constructor(
     private buttonsService: ButtonsService,
@@ -37,25 +37,19 @@ export class TaskCardComponent {
     );
   }
 
-  async updateHandler(task: Task){
-    const id = this.task.idTask;
+  async updateSituationTaskHandler(id: any){
 
     this.data = {
-      "title": `${task.title}`,
-      "description": `${task.description}`,
-      "priority": `${task.priority}`,
-      "situation": "em andamento",
-      "responsible": `${task.responsible}`,
-      "deadline": `${task.deadline}`,
+      "situation": "concluida"
     }
 
-    await this.taskService.updateTask(id, this.data).subscribe(
+    await this.taskService.updateSituationTask(id, this.data).subscribe(
       (resposta) => {
-        console.log('Task editada com sucesso', resposta);
+        console.log('Task concluida com sucesso', resposta);
         this.buttonsService.emitBtnClickReload();
       },
       (erro) => {
-        console.error('Erro ao editar task', erro);
+        console.error('Erro ao concluir task', erro);
       }
     );
   }

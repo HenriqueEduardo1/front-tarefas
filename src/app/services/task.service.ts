@@ -35,4 +35,9 @@ export class TaskService {
     const url = `${this.apiUrl}/${id}`
     return this.http.put<Task>(url, task);
   }
+
+  updateSituationTask(id: any, situation: any){
+    const url = `${this.apiUrl}/${id}`
+    return this.http.patch(url, situation);
+  }
 }
