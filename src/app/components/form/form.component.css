@@ -99,3 +99,19 @@
 .pop-up .form .btns .btn:hover{
     border: 1px solid #0d1321;
 }
+
+@media(max-width: 550px){
+    .pop-up .form .container{
+        flex-direction: column;
+    }
+    .pop-up .form .container .box-form:nth-child(1),
+    .pop-up .form .container .box-form:nth-child(2){
+        width: 100%;
+    }
+    .pop-up .form{
+        width: 65%;
+    }
+    .pop-up .form .container .box-form .group label {
+        display: none;
+    }
+}

@@ -89,7 +89,27 @@
     border: 1px solid #7a7a7a;
     border-radius: 15px;
 }
+.pop-up-edit .form .btns a{
+    color: #0d1321;
+    font-size: 13px;
+}
 
 .pop-up-edit .form .btns .btn:hover{
     border: 1px solid #0d1321;
+}
+
+@media(max-width: 550px){
+    .pop-up-edit .form .container{
+        flex-direction: column;
+    }
+    .pop-up-edit .form .container .box-form:nth-child(1),
+    .pop-up-edit .form .container .box-form:nth-child(2){
+        width: 100%;
+    }
+    .pop-up-edit .form{
+        width: 65%;
+    }
+    .pop-up-edit .form .container .box-form .group label {
+        display: none;
+    }
 }

@@ -111,7 +111,9 @@
     align-items: center;
     justify-content: center;
     transition: 1s;
+    pointer-events: none;
 }
+
 
 .mobile .main .menu-mobile ul{
     display: flex;
@@ -174,6 +176,7 @@
 
 .mobile.active .main{
     opacity: 1;
+    pointer-events: inherit;
 }
 
 .mobile .btns-menu-mob{
@@ -251,4 +254,5 @@
     .mobile {
         display: block;
     }
+    
 }

@@ -6,15 +6,60 @@
 
 .main .header{
     width: calc(100vw - 230px);
-    height: 20vh;
+    margin: 20px 0;
     padding: 0 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 100px;
 }
 
 .main .header .busca{
+    width: 60%;
+    border: 1px solid #0d1321;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.main .header .busca .sections{
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+}
+
+.main .header .busca .sections div{
+    width: 35%;
+}
+
+.main .header .busca .sections .btn{
+    padding: 5px 20px;
+    background: transparent;
+    border: 1px solid #0d1321;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.main .header.busca div:nth-child(1),
+.main .header.busca div:nth-child(2){
     width: 80%;
+}
+
+.main .header .busca .group{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.main .header .busca .group select,
+.main .header .busca .group input{
+    background: transparent;
+    border: 1px solid #0d1321;
+    padding: 4px 15px;
+    outline: none;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 .main .header .btn button{
@@ -64,11 +109,18 @@
         margin-left: 75px;
         width: calc(100vw - 75px);
     }
+    .main .header{
+        width: calc(100vw - 75px);
+        gap: 50px;
+    }
     .main .content{
         width: calc(100vw - 75px);
     }
     .main .content .box-listagem{
         border-radius: 20px;
+    }
+    .main .header .busca {
+        width: 70%;
     }
 }
 
@@ -92,10 +144,47 @@
         margin-left: 0;
         margin-top: 50px;
     }
+    .main .header{
+        width: 100vw;
+        margin: 70px 0 20px 0;
+        padding: 0;
+        gap: 20px;
+    }
     .main .content{
         width: 100vw;
     }
+    .main .header .busca {
+        padding: 10px;
+    }
+    .main .header .busca .sections{
+        flex-wrap: wrap;
+        gap: 10px
+    }
+    .main .header .busca .sections div{
+        width: 48%;
+    }
+    .main .header .busca .group select,
+    .main .header .busca .group input{
+        padding: 2px 7px;
+        font-size: 12px;
+    }
+    .main .header .busca .sections .btn{
+        padding: 3px 20px;
+        font-size: 13px;
+    }
     .main .content .box-listagem{
         border-radius: 15px;
+    }
+}
+
+@media(max-width: 500px){
+    .main .header{
+        flex-direction: column;
+    }
+    .main .header .busca .sections div{
+        width: 30%;
+    }
+    .main .header .busca {
+        width: 85%;
     }
 }

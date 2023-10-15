@@ -4,12 +4,12 @@
             <div class="box-form">
                 <div class="group">
                     <label>Título</label>
-                    <input class="title" clatype="text" formControlName="title" required>
+                    <input class="title" clatype="text" formControlName="title" required placeholder="Título">
                     <p *ngIf="title.invalid && formDir.submitted">Obrigatório</p>
                 </div>
                 <div class="group">
                     <label>Descrição</label>
-                    <textarea class="description" formControlName="description" required></textarea>
+                    <textarea class="description" formControlName="description" required placeholder="Descrição"></textarea>
                     <p *ngIf="description.invalid && formDir.submitted">Obrigatório</p>
                 </div>
             </div>
@@ -17,6 +17,7 @@
                 <div class="group">
                     <label>Responsável</label>
                     <select class="responsible" formControlName="responsible" required>
+                        <option value="" disabled selected>Responsável</option>
                         <option value="Henrique">Henrique</option>
                         <option value="Pablo">Pablo</option>
                         <option value="Douglas">Douglas</option>
@@ -26,6 +27,7 @@
                 <div class="group">
                     <label>Prioridade</label>
                     <select class="priority" formControlName="priority" required>
+                        <option value="" disabled selected>Prioridade</option>
                         <option value="alta">Alta</option>
                         <option value="media">Média</option>
                         <option value="baixa">Baixa</option>
