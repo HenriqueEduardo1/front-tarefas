@@ -11,13 +11,13 @@
                 <span>{{task.deadline}}</span>
             </div>
         </div>
-        <div class="btns">
-            <button class="btn">
+        <div class="btns" >
+            <button class="btn" *ngIf="task.situation === 'em andamento'">
                 <i class="material-symbols-outlined">done</i>
             </button>
-            <button class="btn">
+            <a routerLink="task/edit/{{task.idTask}}" class="btn" *ngIf="task.situation === 'em andamento'">
                 <i class="material-symbols-outlined">edit</i>
-            </button>
+            </a>
             <button class="btn" (click)="removeHandler(task.idTask)">
                 <i class="material-symbols-outlined">delete</i>
             </button>

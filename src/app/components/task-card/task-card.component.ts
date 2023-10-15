@@ -12,8 +12,6 @@ import { Task } from 'src/app/Task';
 export class TaskCardComponent {
   @Input() task!: Task;
 
-  btnText = "Editar"
-
   data!: Task;
 
   constructor(
@@ -22,8 +20,8 @@ export class TaskCardComponent {
     private popUpService: PopUpService
   ) {}
 
-  addClass() {
-    this.popUpService.toggleClass();
+  addClassFormUpdate() {
+    this.popUpService.toggleClassFormUpdate();
   }
   
 
@@ -39,7 +37,7 @@ export class TaskCardComponent {
     );
   }
 
-  async editHandler(task: Task){
+  async updateHandler(task: Task){
     const id = this.task.idTask;
 
     this.data = {

@@ -10,6 +10,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { FormComponent } from './components/form/form.component';
 import { PopUpService } from './services/pop-up.service';
+import { FormUpdateComponent } from './components/form-update/form-update.component';
+import { EditTaskComponent } from './components/pages/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PopUpService } from './services/pop-up.service';
     LeftBarComponent,
     HomeComponent,
     TaskCardComponent,
-    FormComponent
+    FormComponent,
+    FormUpdateComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,

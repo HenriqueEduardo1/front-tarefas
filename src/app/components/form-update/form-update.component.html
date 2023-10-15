@@ -1,4 +1,4 @@
-<section [class.off]="popUpService.addClass" [class.pop-up]="true">
+<section class="pop-up-edit">
     <form (ngSubmit) = "submit()" [formGroup]="taskForm" #formDir="ngForm" class="form">
         <section class="container">
             <div class="box-form">
@@ -40,8 +40,8 @@
             </div>
         </section>
         <div class="btns">
-            <input type="submit" class="btn" value="Cadastrar">
-            <button (click)="addClass()" class="btn">Voltar</button>
+            <input type="submit" class="btn" value="Editar">
+            <a class="btn" routerLink="/">Voltar</a>
         </div>
     </form>
 </section>

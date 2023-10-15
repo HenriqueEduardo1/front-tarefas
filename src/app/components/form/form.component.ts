@@ -9,7 +9,6 @@ import {Task} from 'src/app/Task';
 })
 export class FormComponent {
   @Output() onSubmit = new EventEmitter<Task>();
-  @Input() btnText!: string;
   @Input() taskData: Task | null = null; 
 
   taskForm!: FormGroup;
