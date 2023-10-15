@@ -9,7 +9,7 @@ import { Task } from '../Task';
 })
 export class TaskService {
 
-  private apiUrl = 'http://localhost:8080/task'
+  private apiUrl = 'https://gerenciador-de-tarefas-qb7g.onrender.com/task'
 
   constructor( private http: HttpClient ) { }
 
