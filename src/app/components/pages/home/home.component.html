@@ -1,29 +1,33 @@
 <section class="main">
     <header class="header">
-        <section class="busca">
+        <form class="busca">
             <div class="group">
-                <input type="text" placeholder="Título">
+                <input type="text" placeholder="Título" [(ngModel)]="TDBusca" name="TDBusca">
             </div>
             <div class="sections">
                 <div class="group">
-                    <select>
+                    <select [(ngModel)]="PBusca" name="PBusca">
                         <option value="" disabled selected>Prioridade</option>
                         <option value="alta">Alta</option>
                         <option value="media">Média</option>
                         <option value="baixa">Baixa</option>
                     </select>
+
                 </div>
                 <div class="group">
-                    <select>
+                    <select [(ngModel)]="RBusca" name="RBusca">
                         <option value="" disabled selected>Responsável</option>
                         <option value="Henrique">Henrique</option>
                         <option value="Pablo">Pablo</option>
                         <option value="Douglas">Douglas</option>
                     </select>
                 </div>
-                <button class="btn">Buscar</button>
+                <button class="btn" (click)="filter()">Buscar</button>
+                <button class="btnBS" (click)="clearBusca()">
+                    <span class="material-symbols-outlined">backspace</span>
+                </button>
             </div>
-        </section>
+        </form>
         <div class="btn">
             <button (click)="addClass()">New</button>
         </div>

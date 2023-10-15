@@ -14,6 +14,11 @@ export class HomeComponent {
   filterTasksA: Task[] = [];
   filterTasksM: Task[] = [];
   filterTasksB: Task[] = [];
+  allTaskFilter: Task[] = [];
+
+  TDBusca: string = '';
+  PBusca: string = '';
+  RBusca: string = '';
 
   situation!: string;
 
@@ -58,5 +63,67 @@ export class HomeComponent {
 
   addClass() {
     this.popUpService.toggleClass();
+  }
+
+  clearBusca(): void{
+    this.filterTasksA = this.allTasks.filter((i) => (i.situation === this.situation && i.priority === 'alta'));
+    this.filterTasksM = this.allTasks.filter((i) => (i.situation === this.situation && i.priority === 'media'));
+    this.filterTasksB = this.allTasks.filter((i) => (i.situation === this.situation && i.priority === 'baixa'));
+  }
+
+  filter(): void{
+    this.allTaskFilter = this.allTasks.filter(t => {return this.aplicationFilter(t);});
+    this.filterTasksA = this.allTaskFilter.filter((i) => (i.situation === this.situation && i.priority === 'alta'));
+    this.filterTasksM = this.allTaskFilter.filter((i) => (i.situation === this.situation && i.priority === 'media'));
+    this.filterTasksB = this.allTaskFilter.filter((i) => (i.situation === this.situation && i.priority === 'baixa'));
+  }
+
+  aplicationFilter(task: Task): boolean{
+    if(this.TDBusca === '' && this.RBusca === '' && this.PBusca !== ''){
+      return (task.priority == this.PBusca);
+    }
+    if(this.TDBusca === '' && this.RBusca !== '' && this.PBusca === ''){
+      return (task.responsible == this.RBusca);
+    }
+    if(this.TDBusca !== '' && this.RBusca === '' && this.PBusca === ''){
+      return (
+        task.title.toLowerCase().includes(this.TDBusca.toLowerCase()) ||
+        task.description.toLowerCase().includes(this.TDBusca.toLowerCase())
+      );
+    }
+    if(this.TDBusca !== '' && this.RBusca !== '' && this.PBusca === ''){
+      return (
+        task.responsible == this.RBusca &&
+        (
+          task.title.toLowerCase().includes(this.TDBusca.toLowerCase()) ||
+          task.description.toLowerCase().includes(this.TDBusca.toLowerCase())
+        )
+      );
+    }
+    if(this.TDBusca !== '' && this.RBusca === '' && this.PBusca !== ''){
+      return (
+        task.priority == this.PBusca &&
+        (
+          task.title.toLowerCase().includes(this.TDBusca.toLowerCase()) ||
+          task.description.toLowerCase().includes(this.TDBusca.toLowerCase())
+        )
+      );
+    }
+    if(this.TDBusca === '' && this.RBusca !== '' && this.PBusca !== ''){
+      return (
+        (task.responsible == this.RBusca) && (task.priority == this.PBusca)
+      );
+    }
+    if(this.TDBusca !== '' && this.RBusca !== '' && this.PBusca !== ''){
+      return (
+        task.priority == this.PBusca &&
+        task.responsible == this.RBusca &&
+        (
+          task.title.toLowerCase().includes(this.TDBusca.toLowerCase()) ||
+          task.description.toLowerCase().includes(this.TDBusca.toLowerCase())
+        )
+      );
+    }
+    return true;
   }
 }
