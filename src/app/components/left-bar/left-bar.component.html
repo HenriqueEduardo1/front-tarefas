@@ -7,13 +7,13 @@
             <li class="item-menu">
                 <button (click)="toggleButton(1); clickedBtnMenuP()" [class.pressed]="currentButton === 1">
                     <i class="material-symbols-outlined">home</i>
-                    <span>Home</span>
+                    <span>Tarefas</span>
                 </button>
             </li>
             <li class="item-menu">
                 <button (click)="toggleButton(2); clickedBtnMenuS()" [class.pressed]="currentButton === 2">
                     <i class="material-symbols-outlined">done</i>
-                    <span>Completad tasks</span>
+                    <span>Concluídas</span>
                 </button>
             </li>
         </ul>
@@ -21,7 +21,7 @@
     <div class="s-out">
         <button class="btn">
             <i class="material-symbols-outlined">logout</i>
-            <span>Sign out</span>
+            <span>Sair</span>
         </button>
     </div>
 </aside>
@@ -41,15 +41,15 @@
         <nav class="menu-mobile">
             <ul>
                 <li class="item-menu">
-                    <button (click)="toggleButton(1); clickedBtnMenuP()" [class.pressed]="currentButton === 1">Home</button>
+                    <button (click)="toggleButton(1); clickedBtnMenuP()" [class.pressed]="currentButton === 1">Tarefas</button>
                 </li>
                 <li class="item-menu">
-                    <button (click)="toggleButton(2); clickedBtnMenuS()" [class.pressed]="currentButton === 2">Completad task</button>
+                    <button (click)="toggleButton(2); clickedBtnMenuS()" [class.pressed]="currentButton === 2">Concluídas</button>
                 </li>
             </ul>
         </nav>
         <div class="s-out">
-            <button class="btn">Sign out </button>
+            <button class="btn">Sair</button>
         </div>
     </section>
 </header>

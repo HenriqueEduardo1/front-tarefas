@@ -1,27 +1,48 @@
-# Tarefas
+# Gerenciador de tarefas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.6 e [Spring Boot](https://spring.io/projects/spring-boot) 3.1.4.
 
-## Development server
+Na tela principal do sistema, você encontrará uma organização intuitiva das tarefas. Há uma listagem de tarefas distribuída em três colunas, cada uma representando uma prioridade: alta, média e baixa. Para facilitar a busca de tarefas específicas, foi feito um campo de busca. Além disso, à direita da barra de pesquisa, você verá um botão que permite criar uma nova tarefa. Ao clicar nesse botão, você terá acesso a um formulário completo para inserir todas as informações necessárias para a criação da tarefa desejada.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Cada tarefa é visualizada como um 'card', que contém opções para realizar ações como concluir, editar ou apagar a tarefa. 
 
-## Code scaffolding
+Além disso, vale destacar que o [back-end](https://github.com/HenriqueEduardo1/api-tarefas) do sistema foi desenvolvido utilizando Java 17 e Spring Boot. Ele possui endpoints para lidar com diversas requisições, tais como GET, PUT, DELETE, POST e PATCH. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+No menu lateral, você pode alternar facilmente entre as tarefas em andamento e as tarefas já concluídas.
 
-## Build
+## Itens que foram implementados 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Item a), b), c), e), g) e h) assim como o CRUD completo para as tarefas.
 
-## Running unit tests
+## Documentação da API usando o [swagger](https://swagger.io/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Acesse [aqui!](https://gerenciador-de-tarefas-qb7g.onrender.com/swagger-ui/index.html)
 
-## Running end-to-end tests
+## Acesso ao sistema
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para ter acesso online ao sistema desenvolvido clique [aqui!](https://gerenciador-de-tarefas-gamma.vercel.app/)
 
-## Further help
+## Execução em um ambiente local
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Ter o [java](https://www.oracle.com/java/) 17 instalado
+
+- Intalar o maven
+
+- Instalar o [intellij](https://www.jetbrains.com/idea/nextversion/)
+
+- Clone o repositório da [API](https://github.com/HenriqueEduardo1/api-tarefas)
+
+- Execute a API em sua máquina
+
+- Ter o [Node.js](https://nodejs.org/en) 
+- Instale o Angular CLI
+```
+npm install -g @angular/cli
+```
+- Clone este repositório em sua máquina
+- Execute o sistema
+```
+ng serve
+```
+- Acesse o `http://localhost:4200/` e utilize o sistema
+
