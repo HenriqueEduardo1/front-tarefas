@@ -24,6 +24,18 @@ export class TaskCardComponent {
     this.popUpService.toggleClassFormUpdate();
   }
   
+  get taskColor(): string {
+    switch (this.task.priority) {
+      case 'alta':
+        return '#FFB3B3';
+      case 'media':
+        return '#FFFFB3';
+      case 'baixa':
+        return '#B3FFB3';
+      default:
+        return '#E0E0E0';
+    }
+  }
 
   async removeHandler(id: any){
     await this.taskService.deleteTask(id).subscribe(
