@@ -9,7 +9,7 @@ import { Task } from '../Task';
 })
 export class TaskService {
 
-  private apiUrl = 'https://gerenciador-de-tarefas-qb7g.onrender.com/task'
+  private apiUrl = 'https://api-tarefas-820o.onrender.com/task'
 
   constructor( private http: HttpClient ) { }
 
