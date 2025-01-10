@@ -20,7 +20,7 @@ Acesse [aqui!](https://gerenciador-de-tarefas-qb7g.onrender.com/swagger-ui/index
 
 ## Acesso ao sistema
 
-Para ter acesso online ao sistema desenvolvido clique [aqui!](https://gerenciador-de-tarefas-gamma.vercel.app/)
+Para ter acesso online ao sistema desenvolvido clique [aqui!](https://front-tarefas-tawny.vercel.app/)
 
 ## Execução em um ambiente local
 
